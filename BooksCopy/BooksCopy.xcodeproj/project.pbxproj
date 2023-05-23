@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E8BB3A22A1CF4570096D25E /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8BB3A12A1CF4570096D25E /* StoreView.swift */; };
 		FB23ACA52A1CDEEC0034E6CA /* BooksCopyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB23ACA42A1CDEEC0034E6CA /* BooksCopyApp.swift */; };
 		FB23ACA72A1CDEEC0034E6CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB23ACA62A1CDEEC0034E6CA /* ContentView.swift */; };
 		FB23ACA92A1CDEED0034E6CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB23ACA82A1CDEED0034E6CA /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E8BB3A12A1CF4570096D25E /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		FB23ACA12A1CDEEC0034E6CA /* BooksCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BooksCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB23ACA42A1CDEEC0034E6CA /* BooksCopyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCopyApp.swift; sourceTree = "<group>"; };
 		FB23ACA62A1CDEEC0034E6CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		F8AC87532A1CE15200BD919A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				7E8BB3A12A1CF4570096D25E /* StoreView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB23ACA72A1CDEEC0034E6CA /* ContentView.swift in Sources */,
+				7E8BB3A22A1CF4570096D25E /* StoreView.swift in Sources */,
 				FB23ACA52A1CDEEC0034E6CA /* BooksCopyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +295,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,6 +325,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
