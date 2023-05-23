@@ -32,6 +32,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8AC87522A1CE14500BD919A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F8AC87532A1CE15200BD919A /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
 		FB23AC982A1CDEEC0034E6CA = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +65,8 @@
 		FB23ACA32A1CDEEC0034E6CA /* BooksCopy */ = {
 			isa = PBXGroup;
 			children = (
+				F8AC87532A1CE15200BD919A /* Pages */,
+				F8AC87522A1CE14500BD919A /* Components */,
 				FB23ACA42A1CDEEC0034E6CA /* BooksCopyApp.swift */,
 				FB23ACA62A1CDEEC0034E6CA /* ContentView.swift */,
 				FB23ACA82A1CDEED0034E6CA /* Assets.xcassets */,
