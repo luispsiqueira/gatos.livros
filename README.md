@@ -1,8 +1,2 @@
 # Projeto gatos livros
-muquinha
-
-leblinha
-
-alex turner
-noel gallagher
-dave ghrowl
+Contém um trabalho semelhante ao aplicativo Books, da Apple, apenas com objetivo didático
