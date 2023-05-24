@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB1F19BD2A1D086E002F1E1A /* ReadingNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F19BB2A1CF5F8002F1E1A /* ReadingNowView.swift */; };
 		FB23ACA52A1CDEEC0034E6CA /* BooksCopyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB23ACA42A1CDEEC0034E6CA /* BooksCopyApp.swift */; };
 		FB23ACA72A1CDEEC0034E6CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB23ACA62A1CDEEC0034E6CA /* ContentView.swift */; };
 		FB23ACA92A1CDEED0034E6CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB23ACA82A1CDEED0034E6CA /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB1F19BB2A1CF5F8002F1E1A /* ReadingNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingNowView.swift; sourceTree = "<group>"; };
 		FB23ACA12A1CDEEC0034E6CA /* BooksCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BooksCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB23ACA42A1CDEEC0034E6CA /* BooksCopyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCopyApp.swift; sourceTree = "<group>"; };
 		FB23ACA62A1CDEEC0034E6CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		F8AC87532A1CE15200BD919A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				FB1F19BB2A1CF5F8002F1E1A /* ReadingNowView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			files = (
 				FB23ACA72A1CDEEC0034E6CA /* ContentView.swift in Sources */,
 				FB23ACA52A1CDEEC0034E6CA /* BooksCopyApp.swift in Sources */,
+				FB1F19BD2A1D086E002F1E1A /* ReadingNowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
