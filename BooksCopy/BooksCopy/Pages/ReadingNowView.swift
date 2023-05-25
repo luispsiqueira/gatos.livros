@@ -57,14 +57,7 @@ struct ReadingNowView: View {
                               .font(.system(size:12))
                               .colorMultiply(.gray)
                           Text("")
-                          Menu("...") {
-                              Text("Share Book" + " \(Image(systemName: "square.and.arrow.up"))")
-                              /*@START_MENU_TOKEN@*/Text("Menu Item 2")/*@END_MENU_TOKEN@*/
-                              /*@START_MENU_TOKEN@*/Text("Menu Item 3")/*@END_MENU_TOKEN@*/
-                          }
-                          .padding(.leading,-78)
-                          .font(.system(size:28))
-                          .accentColor(.gray)
+                          MenuComponent()
                         }
                       }
                     
