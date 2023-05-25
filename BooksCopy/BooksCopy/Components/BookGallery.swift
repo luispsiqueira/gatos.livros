@@ -30,25 +30,43 @@ struct BookGallery: View {
     ]
     
     var body: some View {
-            if isGrid {
-                LazyVGrid(columns: columns, spacing: 10) {
-                    if data.count != 0 {
-                        ForEach(0..<data.count, id: \.self) { item in
-                            
-                            if item % 2 == 0 {
-                                BookComponent(data[item]).padding(.trailing, 30)
-                            } else {
-                                BookComponent(data[item])
+        if isGrid {
+            LazyVGrid(columns: columns, spacing: 10) {
+                if data.count != 0 {
+                    ForEach(0..<data.count, id: \.self) { item in
+                        
+                        if item % 2 == 0 {
+                            BookComponent(data[item]).padding(.trailing, 30)
+                        } else {
+                            BookComponent(data[item])
                                 .padding(.leading, 30)
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal)
+        } else {
+            ForEach(0..<data.count, id: \.self) { item in
+                VStack {
+                    HStack {
+                        
+                        RoundedRectangle(cornerRadius: 5).frame(width: 80, height: 130).foregroundColor(.blue)
+                        Spacer()
+                        VStack(alignment:.leading) {
+                            Text("The Little Prince").foregroundColor(.accentColor).fontWeight(.medium)
+                            Text("Antoine de Saint Exupery & Mohsen Safari").foregroundColor(.gray).font(.system(size: 12))
+                            HStack {
+                                Text("1%").foregroundColor(.gray)
+                                Spacer()
+                                Text("...").foregroundColor(.gray)
                             }
                         }
                     }
                 }
-                .padding(.horizontal)
-            } else {
-                VStack{}
-
             }
+            
+            
+        }
         
     }
     
@@ -56,6 +74,6 @@ struct BookGallery: View {
 
 struct BookGallery_Previews: PreviewProvider {
     static var previews: some View {
-        BookGallery(mockBooks, isGrid: true)
+        BookGallery(mockBooks, isGrid: false)
     }
 }

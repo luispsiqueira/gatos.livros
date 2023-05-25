@@ -53,7 +53,9 @@ struct BibliotecaView: View {
                 BookGallery(mockBooks, isGrid: isGrid)
                 
                 
-            }.listStyle(.plain)
+            }
+            
+            .listStyle(.plain)
                 .navigationBarTitle(Text("Library").font(.subheadline), displayMode: .large)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing ) {
@@ -68,7 +70,7 @@ struct BibliotecaView: View {
 
 struct BibliotecaView_Previews: PreviewProvider {
     static var previews: some View {
-        BibliotecaView().preferredColorScheme(.dark)
+        BibliotecaView().preferredColorScheme(.light)
         
     }
 }
