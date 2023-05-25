@@ -70,7 +70,7 @@ struct BibliotecaView: View {
 
 struct BibliotecaView_Previews: PreviewProvider {
     static var previews: some View {
-        BibliotecaView().preferredColorScheme(.light)
+        BibliotecaView()
         
     }
 }
