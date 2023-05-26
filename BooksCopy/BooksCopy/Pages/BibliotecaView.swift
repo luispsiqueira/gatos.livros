@@ -25,43 +25,50 @@ struct BibliotecaView: View {
     var body: some View {
         
         NavigationView {
-            List {
-                NavigationLink {
-                    CollectionsView()
-                } label: {
-                    Text("\(Image(systemName: "text.justify.left"))").foregroundColor(.gray)
-                    Text("Collections")
-                }
-                
-                
-                Text("x books").foregroundColor(.gray).font(.system(size: 16))
-                HStack(alignment: .bottom) {
-                    Text("SORT BY").foregroundColor(.gray).font(.system(size: 14))
-                    Picker("", selection: $selection) {
-                        ForEach(colors, id: \.self) {
-                            Text($0)
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Divider()
+                    NavigationLink {
+                        CollectionsView()
+                    } label: {
+                        
+                        Text("\(Image(systemName: "text.justify.left"))").foregroundColor(.gray)
+                        Text("Collections")
+                        Spacer()
+                        Text("\(Image(systemName: "chevron.forward"))").foregroundColor(.gray)
+                    }
+                    Divider()
+                    HStack{
+                        Text("x books").foregroundColor(.gray).font(.system(size: 16))
+                        Spacer()
+                    }
+                    Divider()
+                    HStack(alignment: .bottom) {
+                        Text("SORT BY").foregroundColor(.gray).font(.system(size: 14))
+                        Picker("", selection: $selection) {
+                            ForEach(colors, id: \.self) {
+                                Text($0)
+                            }
                         }
+                        .labelsHidden().padding(-8)
+                        .pickerStyle(.menu)
+                        Spacer()
+                        
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 2).frame(width: 25, height: 25).opacity(isGrid ? 0 : (isDark ? 0.3 : 1)).foregroundColor(isDark ? .gray : .black)
+                            Image(systemName: "list.bullet").onTapGesture {
+                                isGrid.toggle()
+                            }.foregroundColor(isDark ? .accentColor : (isGrid ? .accentColor : .white))
+                        }
+                        
+                    }.padding(.bottom, 20)
+                    VStack {
+                        BookGallery(mockBooks, isGrid: isGrid)
                     }
-                    .labelsHidden().padding(-8)
-                    .pickerStyle(.menu)
-                    Spacer()
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 2).frame(width: 25, height: 25).opacity(isGrid ? 0 : (isDark ? 0.3 : 1)).foregroundColor(isDark ? .gray : .black)
-                        Image(systemName: "list.bullet").onTapGesture {
-                            isGrid.toggle()
-                        }.foregroundColor(isDark ? .accentColor : (isGrid ? .accentColor : .white))
-                    }
-                    
-                }
-                VStack {
-                    BookGallery(mockBooks, isGrid: isGrid)
-                }
+                }     .padding(.horizontal,32)
                 
             }
-            
-            .listStyle(.plain)
-            .navigationBarTitle(Text("Library").font(.subheadline), displayMode: .large)
+            .navigationTitle("Library")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing ) {
                     Button("Edit") {
@@ -69,6 +76,7 @@ struct BibliotecaView: View {
                     }.foregroundColor(.accentColor)
                 }
             }
+            
         }
     }
 }

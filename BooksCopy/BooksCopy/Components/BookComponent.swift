@@ -9,14 +9,16 @@ import SwiftUI
 
 struct BookComponent: View {
     private var readingProgress = 0.0
+    private var imageName = ""
     private var isNew = true;
     init(_ book: Book) {
         isNew = book.readingProgress == 0.0
         self.readingProgress = book.readingProgress
+        imageName = book.imageName
     }
     var body: some View {
         VStack {
-            Color.blue.frame(width: 160, height: 250)
+            Image("capa_livro").resizable().frame(width: 160, height: 250)
             HStack {
                 if isNew {
                     ZStack {

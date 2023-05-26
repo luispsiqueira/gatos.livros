@@ -11,9 +11,10 @@ struct Book: Hashable {
     let title: String
     let author: String
     let readingProgress: Double
+    let imageName: String
 }
 
-let mockBooks = [Book(title: "The search of lorem", author: "Ana Lorem", readingProgress: 0.0), Book(title: "One hot Lorem", author: "Kevin Ipsum", readingProgress: 5), Book(title: "Dorus Lord", author: "Ash De Bruyne", readingProgress: 76)]
+let mockBooks = [Book(title: "The search of lorem", author: "Ana Lorem", readingProgress: 0.0, imageName:"capa_livro"), Book(title: "One hot Lorem", author: "Kevin Ipsum", readingProgress: 5, imageName:"capa_livro"), Book(title: "Dorus Lord", author: "Ash De Bruyne", readingProgress: 76, imageName:"capa_livro")]
 
 struct BookGallery: View {
     
@@ -74,6 +75,6 @@ struct BookGallery: View {
 
 struct BookGallery_Previews: PreviewProvider {
     static var previews: some View {
-        BookGallery(mockBooks, isGrid: false)
+        BookGallery(mockBooks, isGrid: true)
     }
 }
