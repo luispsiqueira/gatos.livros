@@ -17,6 +17,10 @@ struct BibliotecaView: View {
     @State private var selection = "Manually"
     let colors = ["Recent", "Title", "Author", "Manually"]
     @State private var isGrid = true
+    @Environment(\.colorScheme) var colorScheme
+    private var isDark: Bool {
+        colorScheme == .dark
+    }
     
     var body: some View {
         
@@ -43,27 +47,28 @@ struct BibliotecaView: View {
                     Spacer()
                     
                     ZStack {
+                        RoundedRectangle(cornerRadius: 2).frame(width: 25, height: 25).opacity(isGrid ? 0 : (isDark ? 0.3 : 1)).foregroundColor(isDark ? .gray : .black)
                         Image(systemName: "list.bullet").onTapGesture {
                             isGrid.toggle()
-                        }
-                        RoundedRectangle(cornerRadius: 2).frame(width: 25, height: 25).opacity(isGrid ? 0 : 0.5)
+                        }.foregroundColor(isDark ? .accentColor : (isGrid ? .accentColor : .white))
                     }
                     
                 }
-                BookGallery(mockBooks, isGrid: isGrid)
-                
+                VStack {
+                    BookGallery(mockBooks, isGrid: isGrid)
+                }
                 
             }
             
             .listStyle(.plain)
-                .navigationBarTitle(Text("Library").font(.subheadline), displayMode: .large)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing ) {
-                        Button("Edit") {
-                            print("Edit tapped!")
-                        }.foregroundColor(.accentColor)
-                    }
+            .navigationBarTitle(Text("Library").font(.subheadline), displayMode: .large)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing ) {
+                    Button("Edit") {
+                        print("Edit tapped!")
+                    }.foregroundColor(.accentColor)
                 }
+            }
         }
     }
 }
