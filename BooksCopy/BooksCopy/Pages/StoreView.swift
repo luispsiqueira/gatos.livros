@@ -41,7 +41,7 @@ struct StoreView: View {
                                         .padding(.leading)
                                         .font(.subheadline)
                                         .fontWeight(.bold)
-                                    TopCard(title: "Título", position: 1, color: .pink).padding(.leading)
+                                    TopCard(title: "Memórias postumas", position: 1, color: .pink).padding(.leading)
                                     Divider().padding(.leading)
                                     TopCard(title: "Título", position: 2, color: .green).padding(.leading)
                                     Divider().padding(.leading)
@@ -82,19 +82,21 @@ struct StoreView: View {
                             Divider()}
                     }
                     
+                    Text("Uma viagem pelo Brasil").font(.custom("Georgia-Bold", size: 20)).bold().frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.top, .leading])
                     ScrollView(.horizontal,showsIndicators: false){
                         HStack{
                             ThemedCarrousel()
                             ThemedCarrousel()
                             ThemedCarrousel()
-                            ThemedCarrousel()
+                            ThemedCarrousel().padding(.trailing,48)
                         }}
                     
                 }.navigationBarTitle(Text("Book Store").font(.subheadline), displayMode: .automatic)
-                    .padding(.horizontal)
+                    
                 
                 
-            }
+            }.padding(.horizontal)
         }
         
     }

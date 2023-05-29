@@ -11,11 +11,11 @@ struct Carrousel: View {
     var body: some View {
         VStack{
             ScrollView(.horizontal, showsIndicators: false){
-                HStack(spacing:15){
-                    Carrousel1(title: "Título", microtitle: "MICROTÍTULO", subtitle: "Subtítulo", color: .cyan)
+                HStack(spacing:8){
+                    Carrousel1(title: "Secretamente sua", microtitle: "ROMANCE CONTEMPORÂNEO", subtitle: "Tessa Bailey", color: .cyan)
                     Carrousel1(title: "Título", microtitle: "MICROTÍTULO", subtitle: "Subtítulo", color: .mint)
                     Carrousel1(title: "Título", microtitle: "MICROTÍTULO", subtitle: "Subtítulo", color: .purple).padding(.trailing)
-                    }.padding(.bottom,32)
+                }.padding([.leading, .bottom, .trailing],16)
                 
             }
             

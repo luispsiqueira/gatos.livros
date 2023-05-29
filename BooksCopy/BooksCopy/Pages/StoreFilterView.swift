@@ -9,8 +9,16 @@ import SwiftUI
 
 struct StoreFilterView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationLink {
+            StoreFilterView()
+        } label:{
+            Text("\(Image(systemName: "text.justify.left"))").font(.title3).foregroundColor(.gray)
+            Text("Explore")
+            Spacer()
+            Text("\(Image(systemName: "chevron.forward"))").foregroundColor(.gray)
+        }.padding(.horizontal)
     }
+    
 }
 
 struct StoreFilterView_Previews: PreviewProvider {

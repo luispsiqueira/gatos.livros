@@ -15,19 +15,26 @@ struct TopCard: View {
     
     var body: some View {
         VStack{
-            HStack{
-                RoundedRectangle(cornerRadius: 14)
-                    .fill(color.gradient)
-                    .frame(width: 60,height: 100)
-                    .shadow(radius: 5)
-                Text("\(position)").font(.custom("Georgia", size: 50)).fontWeight(.light)
-                VStack{
-                    Text(title)
-                        .fontWeight(.bold)
-                    Text("Autor").foregroundColor(.gray)
-                
+            ZStack{
+                Rectangle()
+                    .fill(.green)
+                    .opacity(0)
+                    .frame(width: 360, height: 100)
+                HStack{
+                    RoundedRectangle(cornerRadius: 14)
+                        .fill(color.gradient)
+                        .frame(width: 60,height: 100)
+                        .shadow(radius: 5)
+                    Text("\(position)").font(.custom("Georgia", size: 50)).fontWeight(.light)
+                    VStack(alignment: .leading){
+                        Text(title)
+                            .fontWeight(.bold)
+                        Text("Autor").foregroundColor(.gray)
+                        
+                    }
+                    Spacer()
                 }
-                Spacer(minLength: 200)
+                
             }
         }
     }
