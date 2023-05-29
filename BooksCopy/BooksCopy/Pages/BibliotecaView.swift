@@ -9,7 +9,10 @@ import SwiftUI
 
 
 struct BibliotecaView: View {
-    init() {
+    var bookData:[Book] = []
+
+    init(_ bookData:[Book]) {
+        self.bookData = bookData
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 36)!]
         UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size:17)!]
     }
@@ -39,7 +42,7 @@ struct BibliotecaView: View {
                     }
                     Divider()
                     HStack{
-                        Text("x books").foregroundColor(.gray).font(.system(size: 16))
+                        Text("\(bookData.count) books").foregroundColor(.gray).font(.system(size: 16))
                         Spacer()
                     }
                     Divider()
@@ -53,7 +56,6 @@ struct BibliotecaView: View {
                         .labelsHidden().padding(-8)
                         .pickerStyle(.menu)
                         Spacer()
-                        
                         ZStack {
                             RoundedRectangle(cornerRadius: 2).frame(width: 25, height: 25).opacity(isGrid ? 0 : (isDark ? 0.3 : 1)).foregroundColor(isDark ? .gray : .black)
                             Image(systemName: "list.bullet").onTapGesture {
@@ -83,7 +85,7 @@ struct BibliotecaView: View {
 
 struct BibliotecaView_Previews: PreviewProvider {
     static var previews: some View {
-        BibliotecaView()
+        BibliotecaView(mockBooks)
         
     }
 }

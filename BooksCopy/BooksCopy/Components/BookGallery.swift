@@ -48,25 +48,8 @@ struct BookGallery: View {
             .padding(.horizontal)
         } else {
             ForEach(0..<data.count, id: \.self) { item in
-                VStack {
-                    HStack {
-                        
-                        RoundedRectangle(cornerRadius: 5).frame(width: 80, height: 130).foregroundColor(.blue)
-                        Spacer()
-                        VStack(alignment:.leading) {
-                            Text("The Little Prince").foregroundColor(.accentColor).fontWeight(.medium)
-                            Text("Antoine de Saint Exupery & Mohsen Safari").foregroundColor(.gray).font(.system(size: 12))
-                            HStack {
-                                Text("1%").foregroundColor(.gray)
-                                Spacer()
-                                Text("...").foregroundColor(.gray)
-                            }
-                        }
-                    }
-                }
+                BookLineComponent(data[item])
             }
-            
-            
         }
         
     }
@@ -75,6 +58,6 @@ struct BookGallery: View {
 
 struct BookGallery_Previews: PreviewProvider {
     static var previews: some View {
-        BookGallery(mockBooks, isGrid: true)
+        BookGallery(mockBooks, isGrid: false)
     }
 }
