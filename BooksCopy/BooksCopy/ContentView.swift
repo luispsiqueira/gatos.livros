@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        StoreView()
+        TabView{
+            Discover_SearchView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
+                }
+        }
+        .accentColor(.primary)
     }
 }
 
