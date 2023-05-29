@@ -242,7 +242,7 @@ struct ReadingNowView: View {
                                     
                                     Text("Pressed books")
                                         .font(.custom("Georgia-Bold", size: 16))
-                                    .padding(.trailing,178)
+                                    .padding(.trailing,165)
                                     
                                     Image("image 3")
                                         .resizable()
@@ -257,13 +257,19 @@ struct ReadingNowView: View {
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 14)
                                         .fill(
-                                            LinearGradient(gradient: Gradient(colors: [Color(red: 0.12, green: 0.13, blue: 0.176), /*@START_MENU_TOKEN@*/Color(red: 0.133, green: 0.154, blue: 0.204)/*@END_MENU_TOKEN@*/]),
+                                            LinearGradient(gradient: Gradient(colors: [/*@START_MENU_TOKEN@*/Color(red: 0.092, green: 0.102, blue: 0.136)/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/Color(red: 0.133, green: 0.154, blue: 0.204)/*@END_MENU_TOKEN@*/]),
                                                            startPoint: .leading,
                                                            endPoint: .trailing))
                                         .frame(width: self.uiscreen.width - 64,
                                                height: 190,
                                                alignment: .center)
                                         .shadow(radius: 14)
+                                    
+                                    Text("Soon")
+                                        .font(.custom("Georgia-Bold", size: 16))
+                                    .padding(.leading,-140)
+                                    .padding(.top, -70)
+                                    
                                     
                                     Image("image 5")
                                         .resizable()
@@ -289,8 +295,6 @@ struct ReadingNowView: View {
                                 .frame(width: self.uiscreen.width,
                                        height: 418,
                                        alignment: .center)
-                                .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.12, green: 0.13, blue: 0.176)/*@END_MENU_TOKEN@*/)
-                            
                             
                             
                             VStack{
