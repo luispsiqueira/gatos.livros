@@ -20,26 +20,26 @@ struct ReadingNowView: View {
     var body: some View {
         
         NavigationView {
-            ScrollView{
-                //Text("Leando aora")
-                  //  .navigationBarTitleDisplayMode(.inline)
-                
-                
-                HStack{
-                    Text("Today's reading")
-                        .foregroundColor(Color(red: 0.017, green: 0.607, blue: 0.857))
+                ScrollView{
                     
-                    Text("5 minutes left")
-                }.font(.system(size: 12.5))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 32)
-                
-                VStack{
-                    Divider()
-                        .padding(.horizontal, 32)
+                    HStack{
+                        
+                        Text("Today's reading")
+                            .foregroundColor(Color(red: 0.017, green: 0.607, blue: 0.857))
+                        
+                        Text("5 minutes left")
+                    }.font(.system(size: 12.5))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 32)
                     
-                    ZStack{
-                        Rectangle()
+                    
+                    
+                    VStack{
+                        Divider()
+                            .padding(.horizontal, 32)
+                        
+                        ZStack{
+                            Rectangle()
                                 .fill(
                                     LinearGradient(gradient: Gradient(colors: [first_color_correct, second_color]),
                                                    startPoint: .top,
@@ -47,44 +47,311 @@ struct ReadingNowView: View {
                                 .frame(width: self.uiscreen.width,
                                        height: 300,
                                        alignment: .center)
-                        
-                        
-                        VStack{
-                            Text("Current")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 32)
-                            .font(.custom("Georgia-Bold", size: 18))
                             
-                            HStack{
+                            
+                            VStack{
+                                Text("Current")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 32)
+                                    .font(.custom("Georgia-Bold", size: 18))
+                                    .padding(.top, 5)
                                 
-                                Button() {
+                                HStack{
                                     
-                                }label: {
-                                    Image("image 1")
+                                    Button() {
+                                        
+                                    }label: {
+                                        Image("image 1")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(maxHeight: 212)
+                                            .padding(.leading, 1)
+                                            .shadow(radius: 14)
+                                    }.padding(.top, 5)
+                                    Text("   ")
+                                    VStack{
+                                        Text("The Swift Programming Language (Swift 5.7)")
+                                            .font(.system(size:14))
+                                        Text("")
+                                        Text("1%")
+                                            .padding(.leading,-78)
+                                            .font(.system(size:12))
+                                            .foregroundColor(Color.gray)
+                                        Text("")
+                                        MenuComponent()
+                                    }.padding(.trailing, 2)
+                                }
+                            }.padding(.top, -30)
+                        }
+                        .padding(.top, -8)
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(gradient: Gradient(colors: [first_color, second_color]),
+                                                   startPoint: .top,
+                                                   endPoint: .bottom))
+                                .frame(width: self.uiscreen.width,
+                                       height: 418,
+                                       alignment: .center)
+                            
+                            
+                            VStack{
+                                Text("Want to Read")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 32)
+                                    .font(.custom("Georgia-Bold", size: 24))
+                                Text("Books you would like to read next.")
+                                    .foregroundColor(Color.gray)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 32)
+                                    .font(.system(size: 14))
+                                
+                                
+                                
+                                HStack{
+                                    ScrollView(.horizontal) {
+                                        VStack{
+                                            
+                                            Button() {
+                                                
+                                            }label: {
+                                                Image("image 2")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(maxHeight: 182)
+                                                    .padding(.leading, 1)
+                                                    .padding(.top, 20)
+                                                    .shadow(radius: 14)
+                                            }
+                                            HStack{
+                                                ZStack {
+                                                    
+                                                    //tres componentes que vou receber do caio
+                                                    MenuComponent()
+                                                        .padding(.leading, 322)
+                                                    RoundedRectangle(cornerRadius: 20).frame(width: 38, height: 17).foregroundColor(Color(red: 0.112, green: 0.275, blue: 0.453))
+                                                    Text("NEW").fontWeight(.bold).foregroundColor(.white)
+                                                        .font(.system(size: 11))
+                                                }
+                                                .padding(.leading, -66)
+                                                
+                                            }
+                                            
+                                        }.padding(.leading, 32)
+                                    }
+                                }
+                            }.padding(.top, -70)
+                            
+                            Divider().padding(.top, 282)
+                                .padding(.horizontal, 32)
+                            
+                            Button() {
+                                
+                            }label: {
+                                HStack{
+                                    Text("See All ")
+                                        .font(.system(size: 14))
+                                        .padding(.leading, -163)
+                                        .padding(.top, 328)
+                                        .foregroundColor(.primary)
+                                    Text(">")
+                                        .font(.system(size: 14))
+                                        .padding(.leading, -120)
+                                        .padding(.top, 328)
+                                        .foregroundColor(.gray)
+                                }
+                                
+                            }
+                        }
+                        .padding(.top, -8)
+                        
+                        
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(gradient: Gradient(colors: [first_color, second_color]),
+                                                   startPoint: .top,
+                                                   endPoint: .bottom))
+                                .frame(width: self.uiscreen.width,
+                                       height: 1050,
+                                       alignment: .center)
+                            
+                            
+                            VStack{
+                                Text("Popular")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 32)
+                                    .padding(.top,55)
+                                    .font(.custom("Georgia-Bold", size: 24))
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 14)
+                                        .fill(first_color)
+                                        .frame(width: self.uiscreen.width - 64,
+                                               height: 190,
+                                               alignment: .center)
+                                        .shadow(radius: 14)
+                                    
+                                    Text("Read before \n whaching")
+                                        .font(.custom("Georgia-Bold", size: 16))
+                                    .padding(.trailing,178)
+                                    
+                                    Image("image 3")
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(maxHeight: 212)
-                                        .padding(.leading, 1)
+                                        .frame(maxHeight: 180)
+                                        .padding(.trailing,-190)
+                                        .padding(.top, 27)
+                                    
+                                }.padding(.top,10)
+                                Spacer()
+                                
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 14)
+                                        .fill(first_color)
+                                        .frame(width: self.uiscreen.width - 64,
+                                               height: 190,
+                                               alignment: .center)
+                                        .shadow(radius: 14)
+                                    
+                                    Text("Brazilian \n authors")
+                                        .font(.custom("Georgia-Bold", size: 16))
+                                    .padding(.leading,-140)
+                                    
+                                    Image("image 4")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(maxHeight: 200)
+                                        .padding(.leading,187)
+                                        .padding(.top, 18)
+                                    
+                                }.padding(.top,-15)
+                                Spacer()
+                                
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 14)
+                                        .fill(first_color)
+                                        .frame(width: self.uiscreen.width - 64,
+                                               height: 190,
+                                               alignment: .center)
+                                        .shadow(radius: 14)
+                                    
+                                    Text("Pressed books")
+                                        .font(.custom("Georgia-Bold", size: 16))
+                                    .padding(.trailing,178)
+                                    
+                                    Image("image 3")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(maxHeight: 180)
+                                        .padding(.trailing,-190)
+                                        .padding(.top, 27)
+                                }.padding(.top,-15)
+                                Spacer()
+                                
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 14)
+                                        .fill(
+                                            LinearGradient(gradient: Gradient(colors: [Color(red: 0.12, green: 0.13, blue: 0.176), /*@START_MENU_TOKEN@*/Color(red: 0.133, green: 0.154, blue: 0.204)/*@END_MENU_TOKEN@*/]),
+                                                           startPoint: .leading,
+                                                           endPoint: .trailing))
+                                        .frame(width: self.uiscreen.width - 64,
+                                               height: 190,
+                                               alignment: .center)
+                                        .shadow(radius: 14)
+                                    
+                                    Image("image 5")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(maxHeight: 190)
+                                        .padding(.trailing,-135)
+                                }.padding(.top,-15)
+                                Spacer()
+                                
+                                
+                            }.padding(.top, -30)
+                        }.padding(.top,-8)
+                        
+                        
+                        
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(gradient: Gradient(colors: [first_color, second_color]),
+                                                   startPoint: .top,
+                                                   endPoint: .bottom))
+                                .frame(width: self.uiscreen.width,
+                                       height: 418,
+                                       alignment: .center)
+                                .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.12, green: 0.13, blue: 0.176)/*@END_MENU_TOKEN@*/)
+                            
+                            
+                            
+                            VStack{
+                                Text("What are we reading this week")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 32)
+                                    .font(.custom("Georgia-Bold", size: 24))
+                                
+                                
+                                
+                                HStack{
+                                    ScrollView(.horizontal) {
+                                        VStack{
+                                            
+                                            Button() {
+                                                
+                                            }label: {
+                                                Image("image 2")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(maxHeight: 182)
+                                                    .padding(.leading, 1)
+                                                    .padding(.top, 20)
+                                                    .shadow(radius: 14)
+                                            }
+                                            
+                                        }.padding(.leading, 32)
+                                    }
                                 }
-                                Text("   ")
-                                VStack{
-                                    Text("The Swift Programming Language (Swift 5.7)")
-                                        .font(.system(size:14))
-                                    Text("")
-                                    Text("1%")
-                                        .padding(.leading,-78)
-                                        .font(.system(size:12))
-                                        .colorMultiply(.gray)
-                                    Text("")
-                                    MenuComponent()
-                                }.padding(.trailing, 2)
+                            }.padding(.top, -70)
+                            
+                            Divider().padding(.top, 282)
+                                .padding(.horizontal, 32)
+                            
+                            Button() {
+                                
+                            }label: {
+                                HStack{
+                                    Text("See All ")
+                                        .font(.system(size: 14))
+                                        .padding(.leading, -163)
+                                        .padding(.top, 328)
+                                        .foregroundColor(.primary)
+                                    Text(">")
+                                        .font(.system(size: 14))
+                                        .padding(.leading, -120)
+                                        .padding(.top, 328)
+                                        .foregroundColor(.gray)
+                                }
+                                
                             }
-                        }.padding(.top, -30)
+                        }
+                        .padding(.top, -8)
+                        
                     }
-                    .padding(.top, -1)
+                    .navigationBarTitle(Text("-").foregroundColor(second_color) + Text("Reading Now").font(.subheadline),displayMode: .large)
                     
-                }
-            }.navigationBarTitle(Text("Reading Now").font(.subheadline),displayMode: .large)
+                    
+                
+            }
+                
         }
             
     }
@@ -130,5 +397,6 @@ struct ReadingNowView_Previews: PreviewProvider {
         ReadingNowView()
     }
 }
+
 
 
