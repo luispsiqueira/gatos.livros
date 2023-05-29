@@ -32,13 +32,13 @@ struct StoreView: View {
                         Carrousel()
                         Divider()
                         VStack(alignment: .leading) {
-                            Text("Top Charts").font(.custom("Georgia-Bold", size: 25)).bold().padding(.leading)
+                            Text("Top Charts").font(.custom("Georgia-Bold", size: 25)).bold().padding(.leading,32)
                             Divider()}
                         ScrollView(.horizontal, showsIndicators: false){ //TOP CHARTS STACK
                             HStack{
                                 VStack(alignment:.leading){
                                     Text("PAGOS")
-                                        .padding(.leading)
+                                        .padding(.leading,32)
                                         .font(.subheadline)
                                         .fontWeight(.bold)
                                     TopCard(title: "Memórias postumas", position: 1, color: .pink).padding(.leading)
@@ -52,6 +52,7 @@ struct StoreView: View {
                                 
                                 VStack(alignment:.leading){
                                     Text("GRATUITOS")
+                                        .padding(.leading)
                                         .font(.subheadline)
                                         .fontWeight(.bold)
                                     TopCard(title: "Título", position: 1, color: .red)
@@ -91,8 +92,8 @@ struct StoreView: View {
                             ThemedCarrousel()
                             ThemedCarrousel().padding(.trailing,48)
                         }}
-                    
-                }.navigationBarTitle(Text("Book Store").font(.subheadline), displayMode: .automatic)
+                     
+                }.navigationBarTitle(Text("Book Store").font(.headline), displayMode: .automatic)
                     
                 
                 

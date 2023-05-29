@@ -36,7 +36,7 @@ struct TopCard: View {
                 }
                 
             }
-        }
+        }.padding(.leading)
     }
 }
 

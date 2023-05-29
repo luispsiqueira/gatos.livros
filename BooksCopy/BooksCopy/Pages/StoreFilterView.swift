@@ -9,16 +9,28 @@ import SwiftUI
 
 struct StoreFilterView: View {
     var body: some View {
-        NavigationLink {
-            StoreFilterView()
-        } label:{
-            Text("\(Image(systemName: "text.justify.left"))").font(.title3).foregroundColor(.gray)
-            Text("Explore")
-            Spacer()
-            Text("\(Image(systemName: "chevron.forward"))").foregroundColor(.gray)
-        }.padding(.horizontal)
+        ScrollView{
+            ForEach(1...20, id:\.self){_ in
+                NavigationLink {
+                    StoreFilterView()
+                } label:{
+                    Text("\(Image(systemName: "text.justify.left"))").font(.title3).foregroundColor(.gray)
+                    VStack{
+                        HStack{
+                            Text("Explore")
+                            Spacer()
+                            Text("\(Image(systemName: "chevron.forward"))").foregroundColor(.gray)
+                        }
+                        Divider()
+                        
+                    }
+                   
+                    
+                }.padding(.horizontal)}
+        }
+        .listStyle(.plain)
+        .navigationBarTitle(/*@START_MENU_TOKEN@*/"Title"/*@END_MENU_TOKEN@*/)
     }
-    
 }
 
 struct StoreFilterView_Previews: PreviewProvider {
