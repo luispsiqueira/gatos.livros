@@ -73,12 +73,13 @@ struct ReadingNowView: View {
                                         Text("The Swift Programming Language (Swift 5.7)")
                                             .font(.system(size:14))
                                         Text("")
-                                        Text("1%")
+                                        Text("51%")
                                             .padding(.leading,-78)
                                             .font(.system(size:12))
                                             .foregroundColor(Color.gray)
                                         Text("")
                                         MenuComponent()
+                                            .padding(.leading,-78)
                                     }.padding(.trailing, 2)
                                 }
                             }.padding(.top, -30)
@@ -111,35 +112,18 @@ struct ReadingNowView: View {
                                 
                                 HStack{
                                     ScrollView(.horizontal) {
-                                        VStack{
+                                        HStack{
                                             
-                                            Button() {
-                                                
-                                            }label: {
-                                                Image("image 2")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(maxHeight: 182)
-                                                    .padding(.leading, 1)
-                                                    .padding(.top, 20)
-                                                    .shadow(radius: 14)
-                                            }
-                                            HStack{
-                                                ZStack {
-                                                    
-                                                    //tres componentes que vou receber do caio
-                                                    MenuComponent()
-                                                        .padding(.leading, 322)
-                                                    RoundedRectangle(cornerRadius: 20).frame(width: 38, height: 17).foregroundColor(Color(red: 0.112, green: 0.275, blue: 0.453))
-                                                    Text("NEW").fontWeight(.bold).foregroundColor(.white)
-                                                        .font(.system(size: 11))
-                                                }
-                                                .padding(.leading, -66)
-                                                
-                                            }
+                                            BookComponent(mockBooks[0])
+                                            BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 6"))
+                                                .padding(.leading,-20)
+                                            BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 7"))
+                                                .padding(.leading,-20)
+                                            BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 8"))
+                                                .padding(.leading,-20)
                                             
-                                        }.padding(.leading, 32)
-                                    }
+                                        }.padding(.leading, 16)
+                                    }.scrollIndicators(.hidden)
                                 }
                             }.padding(.top, -70)
                             
@@ -265,10 +249,11 @@ struct ReadingNowView: View {
                                                alignment: .center)
                                         .shadow(radius: 14)
                                     
-                                    Text("Soon")
+                                    Text("Comming soon")
                                         .font(.custom("Georgia-Bold", size: 16))
                                     .padding(.leading,-140)
                                     .padding(.top, -70)
+                                    .foregroundColor(.white)
                                     
                                     
                                     Image("image 5")
@@ -307,7 +292,7 @@ struct ReadingNowView: View {
                                 
                                 HStack{
                                     ScrollView(.horizontal) {
-                                        VStack{
+                                        HStack{
                                             
                                             Button() {
                                                 
@@ -320,6 +305,43 @@ struct ReadingNowView: View {
                                                     .padding(.top, 20)
                                                     .shadow(radius: 14)
                                             }
+        
+                                            Button() {
+                                                
+                                            }label: {
+                                                Image("image 6")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(maxHeight: 182)
+                                                    .padding(.leading, 1)
+                                                    .padding(.top, 20)
+                                                    .shadow(radius: 14)
+                                            }.padding(.leading,16)
+                                            
+                                            Button() {
+                                                
+                                            }label: {
+                                                Image("image 7")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(maxHeight: 182)
+                                                    .padding(.leading, 1)
+                                                    .padding(.top, 20)
+                                                    .shadow(radius: 14)
+                                            }.padding(.leading,16)
+                                            
+                                            Button() {
+                                                
+                                            }label: {
+                                                Image("image 8")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(maxHeight: 182)
+                                                    .padding(.leading, 1)
+                                                    .padding(.top, 20)
+                                                    .shadow(radius: 14)
+                                            }.padding(.leading,16)
+                                            
                                             
                                         }.padding(.leading, 32)
                                     }

@@ -43,7 +43,6 @@ struct MenuComponent: View {
                 Label("Remove...", systemImage: "trash")
             }
         }
-        .padding(.leading,-78)
         .font(.system(size:28))
         .accentColor(.gray)
     }
