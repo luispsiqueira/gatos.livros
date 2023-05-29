@@ -18,7 +18,12 @@ struct BookComponent: View {
     }
     var body: some View {
         VStack {
-            Image(imageName).resizable().frame(width: 160, height: 250)
+            Image(imageName).resizable()
+                //.frame(width: 160, height: 250)
+                .resizable()
+                .scaledToFit()
+                .frame(maxHeight: 182)
+                .shadow(radius: 10)
             HStack {
                 if isNew {
                     NewTag()
@@ -28,11 +33,10 @@ struct BookComponent: View {
                         Text("\(readingProgress, specifier: "%.0f")%").foregroundColor(.gray)
                     }
                 }
-                Spacer()
-                Menu("\(Image(systemName: "ellipsis"))") {
-                    Button(action: {}) {
-                        Label("Share Book", systemImage: "square.and.arrow.up")                  }
-                }.accentColor(.gray)
+                //Spacer()
+                Text("         ")
+                MenuComponent()
+                    .padding(.top, -10)
             }.frame(width: 150)
         }
     }
