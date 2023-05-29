@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        BibliotecaView(mockBooks)
+        TabView{
+            Discover_SearchView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
+                }
+        }
+        .accentColor(.primary)
     }
 }
 
