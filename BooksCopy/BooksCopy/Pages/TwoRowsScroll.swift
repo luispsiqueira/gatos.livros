@@ -24,10 +24,10 @@ struct TwoRowsScroll: View {
                 VStack(alignment: .leading){
                     VStack(alignment: .leading){
                         Text("Novidades e tendências").font(.custom("Georgia-Bold", size: 25)).bold()
-                            .padding(.leading,32)
-                        Text("Lançamentos")
+                            .padding(.leading,16)
+                        Text("Lançamentos e livros que estão dando o que falar")
                             .font(.body)
-                            .padding(.leading,32)
+                            .padding(.leading,16)
                     }.foregroundColor(.white)
                     ScrollView(.horizontal,showsIndicators: false){
                         VStack(alignment: .leading){
@@ -77,19 +77,19 @@ struct TwoRowsScroll: View {
                                     .fill(.orange.gradient)
                                     .frame(width: 60,height: 100)
                             }.padding(.leading)
-                        }.padding(.vertical,24).padding(.leading,16)
+                        }.padding(.vertical,24)
                     }
                     Divider()
                     HStack{
                         Text("Ver tudo")
-                            .frame(alignment: .leading).padding(.leading,32).foregroundColor(.white)
+                            .frame(alignment: .leading).padding(.leading).foregroundColor(.white)
                         Text("\(Image(systemName: "chevron.forward"))").font(.caption).foregroundColor(.gray).frame(maxWidth: .infinity, alignment: .leading)
                     }
                     
                 }
                 
             }
-        }.padding(.vertical,32)
+        }.padding(.vertical)
     }
 }
 struct TwoRowsScroll_Previews: PreviewProvider {

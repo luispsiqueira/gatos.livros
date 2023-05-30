@@ -10,6 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView{
+            StoreView()
+                .tabItem {
+                     Image(systemName: "bag.fill")
+                        Text("Book Store")
+                }
             Discover_SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
