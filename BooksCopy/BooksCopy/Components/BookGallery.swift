@@ -37,9 +37,9 @@ struct BookGallery: View {
                     ForEach(0..<data.count, id: \.self) { item in
                         
                         if item % 2 == 0 {
-                            BookComponent(data[item]).padding(.trailing, 30)
+                            BookComponent(data[item],250).padding(.trailing, 30)
                         } else {
-                            BookComponent(data[item])
+                            BookComponent(data[item],250)
                                 .padding(.leading, 30)
                         }
                     }
