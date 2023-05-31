@@ -184,7 +184,7 @@ struct ReadingNowView: View {
                                                alignment: .center)
                                         .shadow(radius: 14)
                                     
-                                    Text("Read before \n whaching")
+                                    Text("Read before \n watching")
                                         .font(.custom("Georgia-Bold", size: 16))
                                     .padding(.trailing,178)
                                     
@@ -388,7 +388,7 @@ struct ReadingNowView: View {
                                                    startPoint: .top,
                                                    endPoint: .bottom))
                                 .frame(width: self.uiscreen.width,
-                                       height: 418,
+                                       height: 498,
                                        alignment: .center)
                             
                             
@@ -443,9 +443,9 @@ struct ReadingNowView: View {
                                     }
                                 }.padding(.top, -120)
     
-                            }
+                            }.padding(.top, -60)
                             Spacer()
-                            Divider().padding(.top, 340)
+                            Divider().padding(.top, 260)
                                 .padding(.horizontal, 32)
                             
                             Button() {
@@ -455,12 +455,12 @@ struct ReadingNowView: View {
                                     Text("Terms and Conditions ")
                                         .font(.system(size: 14))
                                         .padding(.leading, -163)
-                                        .padding(.top, 388)
+                                        .padding(.top, 348)
                                         .foregroundColor(.primary)
                                     Text(">")
                                         .font(.system(size: 14))
                                         .padding(.leading, -22)
-                                        .padding(.top, 388)
+                                        .padding(.top, 348)
                                         .foregroundColor(.gray)
                                 }
                                 

@@ -46,6 +46,6 @@ struct BookComponent: View {
 
 struct BookComponent_Previews: PreviewProvider {
     static var previews: some View {
-        BookComponent(mockBooks[0], 250).preferredColorScheme(.dark)
+        BookComponent(mockBooks[0], 350).preferredColorScheme(.dark)
     }
 }
