@@ -60,7 +60,7 @@ struct BookPage1View: View {
                     Spacer()
                     
                     Text("1")
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.secondary).offset(y: -30)
                 } else{
                     HStack{
                         ZStack{
@@ -99,9 +99,10 @@ struct BookPage1View: View {
                             }
                         }
                         
-                    }
+                    }.offset(y: -30)
                 }
             }//.VStack
+            
         }//.ZStack
         .onTapGesture {
             withAnimation{

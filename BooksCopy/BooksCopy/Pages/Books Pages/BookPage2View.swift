@@ -36,7 +36,7 @@ struct BookPage2View: View {
                     Spacer()
                     
                     Text("2")
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.secondary).offset(y: -30)
                 } else{
                     HStack{
                         ZStack{
@@ -75,7 +75,7 @@ struct BookPage2View: View {
                             }
                         }
                         
-                    }
+                    }.offset(y: -30)
                 }
             }//.VStack
             

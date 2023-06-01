@@ -43,9 +43,9 @@ struct ReadingMenuIcon: View {
         }
 }
 
-struct ReadingMenuIcon_Previews: PreviewProvider {
-    static var previews: some View {
-        @State var state = true
-        ReadingMenuIcon(showingDetail: $state)
-    }
-}
+//struct ReadingMenuIcon_Previews: PreviewProvider {
+//    @State var state = true
+//    static var previews: some View {
+//        ReadingMenuIcon(showingDetail: $state)
+//    }
+//}

@@ -27,7 +27,7 @@ struct BookPage<Content: View>: View {
             RoundedRectangle(cornerRadius: 0).stroke(isDark ? Color.white : .black, lineWidth: 0.5)
             VStack {
             self.content
-            }.padding(.top, 30)
+            }.padding(.top, 50)
         }.frame(width: UIScreen.main.bounds.width + 5, height: UIScreen.main.bounds.height + 6)
             .offset(CGSize(width: 0, height: -4))
     }
