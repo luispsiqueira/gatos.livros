@@ -10,6 +10,12 @@ import SwiftUI
 
 struct ReadingMenu: View {
     @Environment(\.colorScheme) private var colorScheme
+    
+    @State private var showSheet = false
+    @State private var x: Int = 7
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    @State private var mode: Bool = false
+    
     var body: some View {
         VStack(spacing: 5.0){
             Button(action: {}){
@@ -36,17 +42,21 @@ struct ReadingMenu: View {
                 }
                 
             }
-            Button(action: {}){
+            Button(action: {showSheet.toggle()}){
                 ZStack{
                     RoundedRectangle(cornerRadius: 15).frame(width:250,height: 45).foregroundColor(ButtonColor)
                     HStack{
                         Text("Themes & Settings")
                             .font(.body)
-                            .padding(.trailing,40)
-                        Image(systemName: "textformat.size").bold()
+                            .padding(.trailing,10)
+                        Image(systemName: "textformat.size").bold().offset(x:10)
+                        
                     }
                 }
-            }
+            }.font(.largeTitle)
+                            .sheet(isPresented: $showSheet) {
+                                Themes_Settings(x: $x, mode: $mode).presentationDetents([.height(360)])
+                        }
             HStack(spacing: 5.0){
                 
                 

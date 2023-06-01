@@ -14,27 +14,27 @@ struct ThemeButton: View {
             HStack{
                 Button(action: {}){//Original
                     ZStack{
-                        RoundedRectangle(cornerRadius: 20).frame(width: 120, height: 90).foregroundColor(OriginalColor).shadow(radius: 0.5 )
+                        RoundedRectangle(cornerRadius: 20).frame(width: 110, height: 80).foregroundColor(OriginalColor).shadow(radius: 0.5 )
                         VStack{
-                            Text("Aa").font(.custom("Original", size: 35))
+                            Text("Aa").font(.custom("Original", size: 30))
                             Text("Original").font(.custom("Original", size: 15))
                         }
                     }
                 }//Original
                 Button(action: {}){//Quiet
                     ZStack{
-                        RoundedRectangle(cornerRadius: 20).frame(width: 120, height: 90).foregroundColor(QuietColor)
+                        RoundedRectangle(cornerRadius: 20).frame(width: 110, height: 80).foregroundColor(QuietColor)
                         VStack{
-                            Text("Aa").font(.custom("Georgia", size: 35)).foregroundColor(Color.gray)
+                            Text("Aa").font(.custom("Georgia", size: 30)).foregroundColor(Color.gray)
                             Text("Quiet").font(.custom("Georgia", size: 15)).foregroundColor(Color.gray)
                         }
                     }
                 }//Quiet
                 Button(action: {}){//Paper
                     ZStack{
-                        RoundedRectangle(cornerRadius: 20).frame(width: 120, height: 90).foregroundColor(PaperColor).shadow(radius: 0.5 )
+                        RoundedRectangle(cornerRadius: 20).frame(width: 110, height: 80).foregroundColor(PaperColor).shadow(radius: 0.5 )
                         VStack{
-                            Text("Aa").font(.custom("Charter", size: 35))
+                            Text("Aa").font(.custom("Charter", size: 30))
                             Text("Paper").font(.custom("Charter", size: 15))
                         }
                     }
@@ -43,7 +43,7 @@ struct ThemeButton: View {
             HStack{
             Button(action: {}){//Bold
                 ZStack{
-                    RoundedRectangle(cornerRadius: 20).frame(width: 120, height: 90).foregroundColor(BoldColor).shadow(radius: 0.5 )
+                    RoundedRectangle(cornerRadius: 20).frame(width: 110, height: 80).foregroundColor(BoldColor).shadow(radius: 0.5 )
                     VStack{
                         Text("Aa").font(.largeTitle).fontWeight(.bold)
                         Text("Bold").font(.subheadline)
@@ -52,18 +52,18 @@ struct ThemeButton: View {
             }//Bold
                 Button(action: {}){//Calm
                     ZStack{
-                        RoundedRectangle(cornerRadius: 20).frame(width: 120, height: 90).foregroundColor(CalmColor).shadow(radius: 0.5 )
+                        RoundedRectangle(cornerRadius: 20).frame(width: 110, height: 80).foregroundColor(CalmColor).shadow(radius: 0.5 )
                         VStack{
-                            Text("Aa").font(.custom("Palatino", size: 35))
+                            Text("Aa").font(.custom("Palatino", size: 30))
                             Text("Calm").font(.custom("Palatino", size: 15))
                         }
                     }
                 }//Calm
                 Button(action: {}){//Focus
                     ZStack{
-                        RoundedRectangle(cornerRadius: 20).frame(width: 120, height: 90).foregroundColor(FocusColor).shadow(radius: 0.5 )
+                        RoundedRectangle(cornerRadius: 20).frame(width: 110, height: 80).foregroundColor(FocusColor).shadow(radius: 0.5 )
                         VStack{
-                            Text("Aa").font(.custom("Avenir Next", size: 35))
+                            Text("Aa").font(.custom("Avenir Next", size: 30))
                             Text("Focus").font(.custom("Avenir Next", size: 15))
                         }.foregroundColor(FocusFontColor)
                     }

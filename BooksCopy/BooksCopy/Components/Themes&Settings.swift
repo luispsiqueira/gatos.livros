@@ -20,7 +20,7 @@ struct Themes_Settings: View {
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 14)
-                        .frame(width: 150,
+                        .frame(width: 155,
                                height: 45,
                                alignment: .center)
                         .foregroundColor(button_color)
@@ -30,6 +30,7 @@ struct Themes_Settings: View {
                             x-=1
                         }label: {
                             Image(systemName: "textformat.size.smaller")
+                                .font(.custom("", size: 20))
                         }.padding(.trailing, 22.5)
                         Divider().padding(.vertical,368).foregroundColor(Color(red: 0.42, green: 0.42, blue: 0.441))
                         Button() {
@@ -37,6 +38,7 @@ struct Themes_Settings: View {
                         }label: {
                             
                             Image(systemName: "character")
+                                .font(.custom("", size: 26))
                         }
                         .padding(.leading, 22.5)
                     }
@@ -108,9 +110,13 @@ struct Themes_Settings: View {
                             }
                         }
                     }
+                    
                 }
-            }.preferredColorScheme(mode ? .dark : .light)
-        }
+                
+            }.padding(.top, 300)
+            ThemeButton().offset(y: -340)
+            
+        }.preferredColorScheme(mode ? .dark : .light).offset(y:-140)
     }
     
     private var button_color: Color{
