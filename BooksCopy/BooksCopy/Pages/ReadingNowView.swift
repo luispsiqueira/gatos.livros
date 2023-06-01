@@ -65,7 +65,7 @@ struct ReadingNowView: View {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(maxHeight: 212)
-                                            .padding(.leading, 1)
+                                            .padding(.leading, 1.208)
                                             .shadow(radius: 14)
                                     }.padding(.top, 5)
                                     Text("   ")
@@ -372,7 +372,8 @@ struct ReadingNowView: View {
                         .padding(.top, -8)
                         
                     }
-                    .navigationBarTitle(Text("-").foregroundColor(second_color) + Text("Reading Now").font(.subheadline),displayMode: .large)
+                    .navigationBarTitle(Text("-") + Text("Reading Now").font(.subheadline),displayMode: .large)
+                    
                     
                     
                 

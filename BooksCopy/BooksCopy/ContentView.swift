@@ -10,6 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView{
+            ReadingNowView()
+                .tabItem {
+                    Image(systemName: "book.fill")
+                    Text("Reading Now")
+                }
+            BibliotecaView(mockBooks)
+                .tabItem {
+                    Image(systemName: "books.vertical.fill")
+                    Text("Library")
+                }
             Discover_SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
