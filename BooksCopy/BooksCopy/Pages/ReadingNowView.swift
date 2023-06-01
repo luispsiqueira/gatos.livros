@@ -470,7 +470,16 @@ struct ReadingNowView: View {
                         
                     }
                     .navigationBarTitle(Text("Reading Now").font(.subheadline),displayMode: .large)
-                    
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing ) {
+                            Button() {
+                                
+                            }label: {
+                                Image(systemName: "person.crop.circle")
+                                    .font(.custom("", size: 35))
+                                    .padding(.top, 80)
+                            }}
+                    }
                     
                 
             }
