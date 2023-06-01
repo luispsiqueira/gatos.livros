@@ -35,16 +35,7 @@ struct ReadingNowView: View {
                         
                         Text("4 minutes left")
                         
-                        
-                        
-                        Button() {
-                            
-                        }label: {
-                            Image(systemName: "person.crop.circle")
-                                .font(.custom("", size: 55))
-                                .padding(.top, -70)
-                                .padding(.leading ,90)
-                        }
+                    
                         
                         
                     }.font(.system(size: 12.5))
