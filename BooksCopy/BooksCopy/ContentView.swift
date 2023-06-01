@@ -12,8 +12,9 @@ struct ContentView: View {
         TabView{
             StoreView()
                 .tabItem {
-                     Image(systemName: "bag.fill")
-                        Text("Book Store")
+                    Image(systemName: "bag.fill")
+                    Text("Book Store")
+                }
             ReadingNowView()
                 .tabItem {
                     Image(systemName:  "book.fill")
