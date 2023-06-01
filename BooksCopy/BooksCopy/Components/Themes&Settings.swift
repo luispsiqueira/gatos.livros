@@ -17,7 +17,7 @@ struct Themes_Settings: View {
     var body: some View {
         VStack{
             HStack{
-                Text("OPA")
+                
                 ZStack {
                     RoundedRectangle(cornerRadius: 14)
                         .frame(width: 150,
