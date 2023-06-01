@@ -12,9 +12,9 @@ struct ReadingMenu: View {
     @Environment(\.colorScheme) private var colorScheme
     
     @State private var showSheet = false
-    @State private var x: Int = 7
+    @Binding var x: Int
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @State private var mode: Bool = false
+    @Binding var mode: Bool
     
     var body: some View {
         VStack(spacing: 5.0){
@@ -55,7 +55,7 @@ struct ReadingMenu: View {
                 }
             }.font(.largeTitle)
                             .sheet(isPresented: $showSheet) {
-                                Themes_Settings(x: $x, mode: $mode).presentationDetents([.height(360)])
+                                Themes_Settings(x: $x, mode: $mode).presentationDetents([.height(380)])
                         }
             HStack(spacing: 5.0){
                 
@@ -114,11 +114,11 @@ struct ReadingMenu: View {
             
         }
     private var ButtonColor: Color{
-            switch colorScheme{
-            case .light:
-                return Color(red: 0.91, green: 0.91, blue: 0.91)
-            case .dark:
+            switch mode{
+            case true:
                 return Color(red: 0.227, green: 0.227, blue: 0.236)
+            case false:
+                return /*@START_MENU_TOKEN@*/Color(red: 0.271, green: 0.271, blue: 0.271)/*@END_MENU_TOKEN@*/
             @unknown default:
                 return /*@START_MENU_TOKEN@*/Color(red: 0.579, green: 0.152, blue: 0.152)/*@END_MENU_TOKEN@*/
             }
@@ -127,9 +127,10 @@ struct ReadingMenu: View {
 
     }
 
-struct ReadingMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        ReadingMenu()
-    }
-}
+//struct ReadingMenu_Previews: PreviewProvider {
+//    @State var mode = true
+//    static var previews: some View {
+//        ReadingMenu(mode:$mode)
+//    }
+//}
 

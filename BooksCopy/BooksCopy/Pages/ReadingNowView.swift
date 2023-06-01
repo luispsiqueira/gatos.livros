@@ -481,7 +481,7 @@ struct ReadingNowView: View {
                         .padding(.top, -8)
                         
                     }
-                    .navigationBarTitle(Text("Reading Now").font(.subheadline),displayMode: .large)
+                    .navigationBarTitle(Text("Reading Now"),displayMode: .large)
                     .introspectNavigationController { navController in
                                     let bar = navController.navigationBar
                                     let hosting = UIHostingController(rootView: BarContent())

@@ -16,11 +16,9 @@ struct Book: Hashable {
 
 let mockBooks = [Book(title: "The search of lorem", author: "Ana Lorem", readingProgress: 0.0, imageName:"capa_livro"),
                  Book(title: "Swift programming language", author: "Kevin Ipsum", readingProgress: 5, imageName:"image 1"),
-                 Book(title: "Swift fundamentals", author: "Ash De Bruyne", readingProgress: 76, imageName:"image 2"),
-                 Book(title: "Sarah fire", author: "Isabel Deluro", readingProgress: 76, imageName:"image 3"),
-                 Book(title: "Prisioners", author: "Juliana Lorem", readingProgress: 76, imageName:"image 4"),
+                 Book(title: "Swift fundamentals", author: "Ash De Bruyne", readingProgress: 76, imageName:"image 2"), 
                  Book(title: "Sagarana", author: "Rafael Kingdom", readingProgress: 76, imageName:"image 6"),
-                 Book(title: "Dorus Lord", author: "John Eight", readingProgress: 76, imageName:"image 7"),
+                 Book(title: "Dorus Lord", author: "John Eight", readingProgress: 76, imageName:"hamlet 1"),
                  Book(title: "A Teoria de tudo", author: "Steven Hawking", readingProgress: 76, imageName:"image 8")]
 
 struct BookGallery: View {
