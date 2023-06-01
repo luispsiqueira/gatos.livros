@@ -23,14 +23,20 @@ struct ReadingNowView: View {
                 ScrollView{
                     
                     HStack{
+                        Gauge(value: 125, in: 0...300){
+                            Text("")
+                        }.gaugeStyle(.accessoryCircularCapacity)
+                            .scaleEffect(.minimum(0.3, 0.3)).padding(.leading, -23)
+                            .tint(Color(red: 0.017, green: 0.607, blue: 0.857))
                         
                         Text("Today's reading")
-                            .foregroundColor(Color(red: 0.017, green: 0.607, blue: 0.857))
+                            .foregroundColor(Color(red: 0.017, green: 0.607, blue: 0.857)).padding(.leading, -22)
                         
                         Text("5 minutes left")
                     }.font(.system(size: 12.5))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 32)
+                        .padding(.top, -20)
                     
                     
                     
@@ -65,7 +71,7 @@ struct ReadingNowView: View {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(maxHeight: 212)
-                                            .padding(.leading, 1)
+                                            .padding(.leading,1.208)
                                             .shadow(radius: 14)
                                     }.padding(.top, 5)
                                     Text("   ")
@@ -114,12 +120,12 @@ struct ReadingNowView: View {
                                     ScrollView(.horizontal) {
                                         HStack{
                                             
-                                            BookComponent(mockBooks[0])
-                                            BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 6"))
+                                            BookComponent(mockBooks[0],182)
+                                            BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 6"),182)
                                                 .padding(.leading,-20)
-                                            BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 7"))
+                                            BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 7"),182)
                                                 .padding(.leading,-20)
-                                            BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 8"))
+                                            BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 8"),182)
                                                 .padding(.leading,-20)
                                             
                                         }.padding(.leading, 16)
@@ -178,7 +184,7 @@ struct ReadingNowView: View {
                                                alignment: .center)
                                         .shadow(radius: 14)
                                     
-                                    Text("Read before \n whaching")
+                                    Text("Read before \n watching")
                                         .font(.custom("Georgia-Bold", size: 16))
                                     .padding(.trailing,178)
                                     
@@ -186,7 +192,7 @@ struct ReadingNowView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(maxHeight: 180)
-                                        .padding(.trailing,-190)
+                                        .padding(.trailing,-193)
                                         .padding(.top, 27)
                                     
                                 }.padding(.top,10)
@@ -209,7 +215,7 @@ struct ReadingNowView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(maxHeight: 200)
-                                        .padding(.leading,187)
+                                        .padding(.leading,190)
                                         .padding(.top, 18)
                                     
                                 }.padding(.top,-15)
@@ -232,7 +238,7 @@ struct ReadingNowView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(maxHeight: 180)
-                                        .padding(.trailing,-190)
+                                        .padding(.trailing,-193)
                                         .padding(.top, 27)
                                 }.padding(.top,-15)
                                 Spacer()
@@ -338,7 +344,7 @@ struct ReadingNowView: View {
                                             
                                             
                                         }.padding(.leading, 32)
-                                    }
+                                    }.scrollIndicators(.hidden)
                                 }
                             }.padding(.top, -70)
                             
@@ -365,8 +371,99 @@ struct ReadingNowView: View {
                         }
                         .padding(.top, -8)
                         
+                        
+                        
+                        
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(gradient: Gradient(colors: [first_color_correct, first_color_correct]),
+                                                   startPoint: .top,
+                                                   endPoint: .bottom))
+                                .frame(width: self.uiscreen.width,
+                                       height: 498,
+                                       alignment: .center)
+                            
+                            
+                            VStack{
+                                Text("Reading Goals")
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .font(.custom("Georgia-Bold", size: 24))
+                                Text("Read every day, see your stars soar and finish more books.")
+                                    .foregroundColor(.gray)
+                                    .padding(.top,-5)
+                                    .multilineTextAlignment(.center)
+                                    .frame(maxWidth: 300, alignment: .center)
+                                    .font(.system(size: 12))
+                                
+                                //clock
+                                Gauge(value: 125, in: 0...300) {
+                                } currentValueLabel: {
+                                    VStack{
+                                        Text("Today's Reading")
+                                            .font(.custom("Georgia-Bold", size: 18))
+                                        Text("1:05")
+                                            .font(.custom("Georgia-Bold", size: 70))
+                                            .padding(.top,-30)
+                                        HStack{
+                                            Text("of your 5-minute goal")
+                                                .font(.system(size: 14))
+                                                .foregroundColor(.primary)
+                                            Text(">")
+                                                .font(.system(size: 14))
+                                                .foregroundColor(.gray)
+                                        }
+                                        
+                                    }.padding(.top,-90)
+                                    
+                                    
+                                }.gaugeStyle(myGaugeStyle())
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 40)
+                                        .frame(width: 310,
+                                               height: 60,
+                                               alignment: .center)
+                                        .foregroundColor(button_color)
+                                    VStack{
+                                        Text("Keep reading")
+                                            .bold()
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.white)
+                                        Text("The swift Programming Language (Swift...")
+                                            .font(.system(size: 12))
+                                            .foregroundColor(.white)
+                                    }
+                                }.padding(.top, -120)
+    
+                            }.padding(.top, -60)
+                            Spacer()
+                            Divider().padding(.top, 260)
+                                .padding(.horizontal, 32)
+                            
+                            Button() {
+                                
+                            }label: {
+                                HStack{
+                                    Text("Terms and Conditions ")
+                                        .font(.system(size: 14))
+                                        .padding(.leading, -163)
+                                        .padding(.top, 348)
+                                        .foregroundColor(.primary)
+                                    Text(">")
+                                        .font(.system(size: 14))
+                                        .padding(.leading, -22)
+                                        .padding(.top, 348)
+                                        .foregroundColor(.gray)
+                                }
+                                
+                            }
+                        }
+                        .padding(.top, -8)
+                        
                     }
-                    .navigationBarTitle(Text("-").foregroundColor(second_color) + Text("Reading Now").font(.subheadline),displayMode: .large)
+                    .navigationBarTitle(Text("Reading Now").font(.subheadline),displayMode: .large)
                     
                     
                 
@@ -409,6 +506,17 @@ struct ReadingNowView: View {
         }
         
     }
+    private var button_color: Color{
+        switch colorScheme{
+        case .light:
+            return /*@START_MENU_TOKEN@*/Color(red: 0.0, green: 0.0, blue: 0.0)/*@END_MENU_TOKEN@*/
+        case .dark:
+            return /*@START_MENU_TOKEN@*/Color(red: 0.2, green: 0.2, blue: 0.2)/*@END_MENU_TOKEN@*/
+        @unknown default:
+            return /*@START_MENU_TOKEN@*/Color(red: 0.0, green: 0.0, blue: 0.0)/*@END_MENU_TOKEN@*/
+        }
+        
+    }
     
 }
 
@@ -420,3 +528,56 @@ struct ReadingNowView_Previews: PreviewProvider {
 
 
 
+
+struct myGaugeStyle: GaugeStyle {
+    
+    @Environment(\.colorScheme) private var colorScheme
+    
+    private var myblue = Color(red: 0.017, green: 0.607, blue: 0.857)
+ 
+    func makeBody(configuration: Configuration) -> some View {
+        ZStack {
+ 
+            Circle()
+                .trim(from: 0, to: 1.2 * configuration.value)
+                .stroke(bar_time,
+                            style: StrokeStyle(
+                              lineWidth: 10,
+                              lineCap: .round
+                            ))
+                .rotationEffect(.degrees(180))
+ 
+            Circle()
+                .trim(from: 0, to: 0.4466 * configuration.value)
+                .stroke(myblue,
+                            style: StrokeStyle(
+                              lineWidth: 10,
+                              lineCap: .round
+                            ))
+                .rotationEffect(.degrees(180))
+ 
+            VStack {
+                configuration.currentValueLabel
+                    //.font(.system(size: 10, weight: .bold, design: .rounded))
+                    .foregroundColor(.primary)
+                
+            }
+ 
+        }
+        .frame(width: 300, height: 300)
+ 
+    }
+    
+    private var bar_time: Color{
+        switch colorScheme{
+        case .light:
+            return /*@START_MENU_TOKEN@*/Color(red: 0.95, green: 0.945, blue: 0.967)/*@END_MENU_TOKEN@*/
+        case .dark:
+            return /*@START_MENU_TOKEN@*/Color(red: 0.11, green: 0.11, blue: 0.118)/*@END_MENU_TOKEN@*/
+        @unknown default:
+            return /*@START_MENU_TOKEN@*/Color(red: 0.0, green: 0.0, blue: 0.0)/*@END_MENU_TOKEN@*/
+        }
+        
+    }
+ 
+}

@@ -15,15 +15,23 @@ struct BookLineComponent: View {
     var body: some View {
         VStack {
             HStack {
-             Image(book.imageName).resizable().frame(width: 70, height: 110)
+                NavigationLink(destination: ReadBook()) {
+                    Image(book.imageName).resizable().frame(width: 70, height: 110)}
+                
                 Spacer()
                 VStack(alignment:.leading) {
-                    Text(book.title).foregroundColor(.accentColor).fontWeight(.medium)
-                    Text(book.author).foregroundColor(.gray).font(.system(size: 12)).padding(.bottom, 5)
+                    NavigationLink(destination: ReadBook()) {
+                        Text(book.title).foregroundColor(.accentColor).fontWeight(.medium)
+                    }
+                    NavigationLink(destination: ReadBook()) {
+                        Text(book.author).foregroundColor(.gray).font(.system(size: 12)).padding(.bottom, 5)
+                    }
                     HStack {
                         Text("\(book.readingProgress, specifier: "%.0f")%").foregroundColor(.gray)
                         Spacer()
-                        Text("...").foregroundColor(.gray)
+                    
+                        MenuComponent()
+                        .padding(.top, -10)
                     }
                 }
             }

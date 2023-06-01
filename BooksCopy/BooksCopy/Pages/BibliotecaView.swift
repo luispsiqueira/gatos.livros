@@ -78,8 +78,8 @@ struct BibliotecaView: View {
                     }.foregroundColor(.accentColor)
                 }
             }
-            
         }
+        
     }
 }
 

@@ -11,19 +11,23 @@ struct BookComponent: View {
     private var readingProgress = 0.0
     private var imageName = ""
     private var isNew = true;
-    init(_ book: Book) {
+    private var x:CGFloat = 0;
+    init(_ book: Book, _ xx: Int) {
         isNew = book.readingProgress == 0.0
         self.readingProgress = book.readingProgress
         imageName = book.imageName
+        x = CGFloat(xx)
     }
     var body: some View {
         VStack {
-            Image(imageName).resizable()
+            NavigationLink(destination: ReadBook()) {
+                Image(imageName).resizable()
                 //.frame(width: 160, height: 250)
-                .resizable()
-                .scaledToFit()
-                .frame(maxHeight: 182)
-                .shadow(radius: 10)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: x)
+                    .shadow(radius: 10)
+            }
             HStack {
                 if isNew {
                     NewTag()
@@ -44,6 +48,6 @@ struct BookComponent: View {
 
 struct BookComponent_Previews: PreviewProvider {
     static var previews: some View {
-        BookComponent(mockBooks[0]).preferredColorScheme(.dark)
+        BookComponent(mockBooks[0], 350).preferredColorScheme(.dark)
     }
 }

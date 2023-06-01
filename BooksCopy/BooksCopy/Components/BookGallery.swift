@@ -14,7 +14,14 @@ struct Book: Hashable {
     let imageName: String
 }
 
-let mockBooks = [Book(title: "The search of lorem", author: "Ana Lorem", readingProgress: 0.0, imageName:"capa_livro"), Book(title: "One hot Lorem", author: "Kevin Ipsum", readingProgress: 5, imageName:"capa_livro"), Book(title: "Dorus Lord", author: "Ash De Bruyne", readingProgress: 76, imageName:"capa_livro")]
+let mockBooks = [Book(title: "The search of lorem", author: "Ana Lorem", readingProgress: 0.0, imageName:"capa_livro"),
+                 Book(title: "Swift programming language", author: "Kevin Ipsum", readingProgress: 5, imageName:"image 1"),
+                 Book(title: "Swift fundamentals", author: "Ash De Bruyne", readingProgress: 76, imageName:"image 2"),
+                 Book(title: "Sarah fire", author: "Isabel Deluro", readingProgress: 76, imageName:"image 3"),
+                 Book(title: "Prisioners", author: "Juliana Lorem", readingProgress: 76, imageName:"image 4"),
+                 Book(title: "Sagarana", author: "Rafael Kingdom", readingProgress: 76, imageName:"image 6"),
+                 Book(title: "Dorus Lord", author: "John Eight", readingProgress: 76, imageName:"image 7"),
+                 Book(title: "A Teoria de tudo", author: "Steven Hawking", readingProgress: 76, imageName:"image 8")]
 
 struct BookGallery: View {
     
@@ -37,9 +44,9 @@ struct BookGallery: View {
                     ForEach(0..<data.count, id: \.self) { item in
                         
                         if item % 2 == 0 {
-                            BookComponent(data[item]).padding(.trailing, 30)
+                            BookComponent(data[item],350).padding(.trailing, 30)
                         } else {
-                            BookComponent(data[item])
+                            BookComponent(data[item],350)
                                 .padding(.leading, 30)
                         }
                     }
