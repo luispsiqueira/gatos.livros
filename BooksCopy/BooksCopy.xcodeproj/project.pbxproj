@@ -31,6 +31,7 @@
 		F8AC87552A1CF7DA00BD919A /* BibliotecaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC87542A1CF7DA00BD919A /* BibliotecaView.swift */; };
 		F8CA33742A20FE6B00783897 /* BookLineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA33732A20FE6B00783897 /* BookLineComponent.swift */; };
 		F8CA33762A20FFD500783897 /* NewTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA33752A20FFD500783897 /* NewTag.swift */; };
+		F8D92C052A29055F0059BC1F /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = F8D92C042A29055F0059BC1F /* Introspect */; };
 		F8FAFBA22A1E34F700AF425F /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FAFBA12A1E34F700AF425F /* CollectionsView.swift */; };
 		FB1F19BD2A1D086E002F1E1A /* ReadingNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F19BB2A1CF5F8002F1E1A /* ReadingNowView.swift */; };
 		FB23ACA52A1CDEEC0034E6CA /* BooksCopyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB23ACA42A1CDEEC0034E6CA /* BooksCopyApp.swift */; };
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D92C052A29055F0059BC1F /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +204,9 @@
 			dependencies = (
 			);
 			name = BooksCopy;
+			packageProductDependencies = (
+				F8D92C042A29055F0059BC1F /* Introspect */,
+			);
 			productName = BooksCopy;
 			productReference = FB23ACA12A1CDEEC0034E6CA /* BooksCopy.app */;
 			productType = "com.apple.product-type.application";
@@ -230,6 +235,9 @@
 				Base,
 			);
 			mainGroup = FB23AC982A1CDEEC0034E6CA;
+			packageReferences = (
+				F8D92C032A29055F0059BC1F /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = FB23ACA22A1CDEEC0034E6CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -489,6 +497,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8D92C032A29055F0059BC1F /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8D92C042A29055F0059BC1F /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8D92C032A29055F0059BC1F /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FB23AC992A1CDEEC0034E6CA /* Project object */;
 }
