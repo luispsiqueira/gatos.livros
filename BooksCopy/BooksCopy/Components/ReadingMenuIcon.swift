@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ReadingMenuIcon: View {
     @Environment(\.colorScheme) private var colorScheme
-    @State var showingDetail = false
+    @Binding var showingDetail : Bool
     var body: some View {
+        
         Button(action: {self.showingDetail.toggle()}){
             ZStack{
                 if showingDetail == false {
@@ -23,12 +24,9 @@ struct ReadingMenuIcon: View {
                 }
                 if showingDetail == true{
                     ZStack{
-                        Button(action: {self.showingDetail.toggle()}){
-                            Rectangle()
-                                .foregroundColor(/*@START_MENU_TOKEN@*/.green/*@END_MENU_TOKEN@*/).frame(width: 900, height: 900).opacity(0)
-                        }
                         ReadingMenu()
-                        .padding([.bottom, .trailing], 180.0)}}
+                        
+                    }}
             }
         }
     }
@@ -45,8 +43,9 @@ struct ReadingMenuIcon: View {
         }
 }
 
-struct ReadingMenuIcon_Previews: PreviewProvider {
-    static var previews: some View {
-        ReadingMenuIcon()
-    }
-}
+//struct ReadingMenuIcon_Previews: PreviewProvider {
+//    @State var state = true
+//    static var previews: some View {
+//        ReadingMenuIcon(showingDetail: $state)
+//    }
+//}

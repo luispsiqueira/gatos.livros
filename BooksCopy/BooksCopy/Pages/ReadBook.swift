@@ -9,15 +9,15 @@ import SwiftUI
 struct ReadBook: View {
     
     var body: some View {
-        TabView {
-            BookPage {
-                BookPage1View()
+            TabView {
+                BookPage {
+                    BookPage1View()
+                }
+                BookPage {
+                    BookPage2View()
+                }
             }
-            BookPage {
-                BookPage2View()
-            }
-        }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .ignoresSafeArea()
         .navigationBarBackButtonHidden()
         .toolbar(.hidden, for: .tabBar)
