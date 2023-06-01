@@ -35,7 +35,7 @@ struct ReadingNowView: View {
                         Text("5 minutes left")
                     }.font(.system(size: 12.5))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 32)
+                        .padding(.leading, 20)
                         .padding(.top, -20)
                     
                     
@@ -58,7 +58,7 @@ struct ReadingNowView: View {
                             VStack{
                                 Text("Current")
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, 32)
+                                    .padding(.leading)
                                     .font(.custom("Georgia-Bold", size: 18))
                                     .padding(.top, 5)
                                 
@@ -71,10 +71,8 @@ struct ReadingNowView: View {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(maxHeight: 212)
-                                            .padding(.leading,1.208)
                                             .shadow(radius: 14)
-                                    }.padding(.top, 5)
-                                    Text("   ")
+                                    }.padding(.top, 5).padding(.leading)
                                     VStack{
                                         Text("The Swift Programming Language (Swift 5.7)")
                                             .font(.system(size:14))
@@ -106,12 +104,12 @@ struct ReadingNowView: View {
                             VStack{
                                 Text("Want to Read")
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, 32)
+                                    .padding(.leading)
                                     .font(.custom("Georgia-Bold", size: 24))
                                 Text("Books you would like to read next.")
                                     .foregroundColor(Color.gray)
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, 32)
+                                    .padding(.leading)
                                     .font(.system(size: 14))
                                 
                                 
@@ -128,7 +126,7 @@ struct ReadingNowView: View {
                                             BookComponent(Book(title: "", author: "", readingProgress: 0.0, imageName:"image 8"),182)
                                                 .padding(.leading,-20)
                                             
-                                        }.padding(.leading, 16)
+                                        }
                                     }.scrollIndicators(.hidden)
                                 }
                             }.padding(.top, -70)
@@ -142,7 +140,7 @@ struct ReadingNowView: View {
                                 HStack{
                                     Text("See All ")
                                         .font(.system(size: 14))
-                                        .padding(.leading, -163)
+                                        .padding(.leading, -165)
                                         .padding(.top, 328)
                                         .foregroundColor(.primary)
                                     Text(">")
@@ -172,14 +170,14 @@ struct ReadingNowView: View {
                             VStack{
                                 Text("Popular")
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, 32)
+                                    .padding(.leading)
                                     .padding(.top,55)
                                     .font(.custom("Georgia-Bold", size: 24))
                                 
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 14)
                                         .fill(first_color)
-                                        .frame(width: self.uiscreen.width - 64,
+                                        .frame(width: self.uiscreen.width - 32,
                                                height: 190,
                                                alignment: .center)
                                         .shadow(radius: 14)
@@ -192,8 +190,9 @@ struct ReadingNowView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(maxHeight: 180)
-                                        .padding(.trailing,-193)
+                                        .padding(.trailing,-195)
                                         .padding(.top, 27)
+                                        .offset(x: 14)
                                     
                                 }.padding(.top,10)
                                 Spacer()
