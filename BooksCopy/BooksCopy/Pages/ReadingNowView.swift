@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct ReadingNowView: View {
+    @State private var lastHostingView: UIView!
+
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
         UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size:17)!]
@@ -479,7 +482,24 @@ struct ReadingNowView: View {
                         
                     }
                     .navigationBarTitle(Text("Reading Now").font(.subheadline),displayMode: .large)
-                    
+                    .introspectNavigationController { navController in
+                                    let bar = navController.navigationBar
+                                    let hosting = UIHostingController(rootView: BarContent())
+                                    
+                                    guard let hostingView = hosting.view else { return }
+                                    bar.subviews.first(where: \.clipsToBounds)?.addSubview(hostingView)  
+                                    hostingView.backgroundColor = .clear
+                                    
+                                    lastHostingView?.removeFromSuperview()
+                                    lastHostingView = hostingView
+                                    
+                                    hostingView.translatesAutoresizingMaskIntoConstraints = false
+                                    NSLayoutConstraint.activate([
+                                        hostingView.trailingAnchor.constraint(equalTo: bar.trailingAnchor),
+                                        hostingView.bottomAnchor.constraint(equalTo: bar.bottomAnchor, constant: -8)
+                                    ])
+                                }
+
                     
                 
             }
@@ -596,3 +616,14 @@ struct myGaugeStyle: GaugeStyle {
     }
  
 }
+
+struct BarContent: View {
+    var body: some View {
+        Button {
+            print("Profile tapped")
+        } label: {
+            Image(systemName: "person.crop.circle").font(.custom("", size: 40)).padding(.trailing, 16)
+        }
+    }
+}
+
