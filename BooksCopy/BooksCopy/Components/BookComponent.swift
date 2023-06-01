@@ -20,12 +20,14 @@ struct BookComponent: View {
     }
     var body: some View {
         VStack {
-            Image(imageName).resizable()
+            NavigationLink(destination: ReadBook()) {
+                Image(imageName).resizable()
                 //.frame(width: 160, height: 250)
-                .resizable()
-                .scaledToFit()
-                .frame(maxHeight: x)
-                .shadow(radius: 10)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: x)
+                    .shadow(radius: 10)
+            }
             HStack {
                 if isNew {
                     NewTag()

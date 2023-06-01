@@ -22,6 +22,7 @@ struct ReadBook: View {
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden()
     }
 }
 
