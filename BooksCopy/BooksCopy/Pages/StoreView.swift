@@ -56,7 +56,7 @@ struct StoreView: View {
                                                 Divider().padding(.leading)
                                                 TopCard(capa:"Machado",title: "Memórias Postumas de \nBras Cubas",author:"Machado de Assis", position: 2, color: .green).padding(.leading)
                                                 Divider().padding(.leading)
-                                                TopCard(capa:"veredas",title: "Título",author:"Guimarães Rosa", position: 3, color: .blue).padding(.leading)
+                                                TopCard(capa:"veredas",title: "Grande Sertão:\nVeredas",author:"Guimarães Rosa", position: 3, color: .blue).padding(.leading)
                                                     .padding(.bottom,32)
                                                 
                                             } // TOP CHARTS STACK
@@ -69,7 +69,7 @@ struct StoreView: View {
                                                 Divider()
                                                 TopCard(capa:"Benjamin",title: "A Obra de Arte na \nEra de Sua \nReprodutibiliadade\nTécnica", author:"Walter Benjamin",position: 2, color: .green)
                                                 Divider()
-                                                TopCard(capa:"image 7",title: "Título",author:"idk", position: 3, color: .blue)
+                                                TopCard(capa:"Amar",title: "Amar, Verbo Intransitivo",author:"Mario de Andrade", position: 3, color: .blue)
                                                     .padding(.bottom,32)
                                             }
                                             
@@ -94,28 +94,28 @@ struct StoreView: View {
                                 
                             }
                         }
-                        ZStack{
-                            Rectangle()
-                                .fill(
-                                    LinearGradient(gradient: Gradient(colors: [first_gray, second_gray]),
-                                                   startPoint: .top,
-                                                   endPoint: .bottom))
-                                .frame(width: self.uiscreen.width,
-                                       alignment: .center)
-                                .aspectRatio(contentMode: .fill)
-                            VStack{
-                                Text("Uma viagem pelo Brasil").font(.custom("Georgia-Bold", size: 20)).bold().frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding([.top, .leading])
-                                ScrollView(.horizontal,showsIndicators: false){
-                                    HStack{
-                                        ThemedCarrousel()
-                                        ThemedCarrousel()
-                                        ThemedCarrousel()
-                                        ThemedCarrousel().padding(.trailing,48)
-                                    }}.padding(.vertical)
-                                }.padding(.vertical)}
+//                        ZStack{
+//                            Rectangle()
+//                                .fill(
+//                                    LinearGradient(gradient: Gradient(colors: [first_gray, second_gray]),
+//                                                   startPoint: .top,
+//                                                   endPoint: .bottom))
+//                                .frame(width: self.uiscreen.width,
+//                                       alignment: .center)
+//                                .aspectRatio(contentMode: .fill)
+//                            VStack{
+//                                Text("Uma viagem pelo Brasil").font(.custom("Georgia-Bold", size: 20)).bold().frame(maxWidth: .infinity, alignment: .leading)
+//                                    .padding([.top, .leading])
+//                                ScrollView(.horizontal,showsIndicators: false){
+//                                    HStack{
+//                                        ThemedCarrousel()
+//                                        ThemedCarrousel()
+//                                        ThemedCarrousel()
+//                                        ThemedCarrousel().padding(.trailing,48)
+//                                    }}.padding(.vertical)
+//                                }.padding(.vertical)}
                         Divider()
-                        GenFilter()
+                        GenFilter().padding(.bottom,50)
                     }
                 }.navigationBarTitle(Text("Book Store").font(.headline), displayMode: .automatic)
                     

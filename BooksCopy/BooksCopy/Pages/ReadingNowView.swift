@@ -298,12 +298,6 @@ struct ReadingNowView: View {
                                                 
                                             }label: {
                                                 Image("image 2")
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(maxHeight: 182)
-                                                    .padding(.leading, 1)
-                                                    .padding(.top, 20)
-                                                    .shadow(radius: 14)
                                             }
         
                                             Button() {
