@@ -11,18 +11,16 @@ struct ReadBook: View {
     var body: some View {
         TabView {
             BookPage {
-                Text("😎")
+                BookPage1View()
             }
             BookPage {
-                Text("🥰")
-            }
-            BookPage {
-                Text("A")
+                BookPage2View()
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .ignoresSafeArea()
         .navigationBarBackButtonHidden()
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 
