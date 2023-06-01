@@ -10,17 +10,19 @@ import SwiftUI
 struct StoreFilterView: View {
     var body: some View {
         ScrollView{
-            ForEach(1...20, id:\.self){_ in
+            Divider()
+            ForEach(1...5, id:\.self){_ in
                 NavigationLink {
                     StoreFilterView()
                 } label:{
-                    Text("\(Image(systemName: "text.justify.left"))").font(.title3).foregroundColor(.gray)
+                    
+                    Text("\(Image(systemName: "questionmark.app.fill"))").font(.title3).foregroundColor(.gray)
                     VStack{
                         HStack{
-                            Text("Explore")
+                            Text("Section")
                             Spacer()
                             Text("\(Image(systemName: "chevron.forward"))").foregroundColor(.gray)
-                        }
+                        }.padding(.vertical,8)
                         Divider()
                         
                     }
@@ -29,7 +31,7 @@ struct StoreFilterView: View {
                 }.padding(.horizontal)}
         }
         .listStyle(.plain)
-        .navigationBarTitle(/*@START_MENU_TOKEN@*/"Title"/*@END_MENU_TOKEN@*/)
+        .navigationBarTitle("Browse Sections")
     }
 }
 

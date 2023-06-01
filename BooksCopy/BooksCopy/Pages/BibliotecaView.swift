@@ -67,7 +67,7 @@ struct BibliotecaView: View {
                     VStack {
                         BookGallery(mockBooks, isGrid: isGrid)
                     }
-                }     .padding(.horizontal,32)
+                }     .padding(.horizontal)
                 
             }
             .navigationTitle("Library")

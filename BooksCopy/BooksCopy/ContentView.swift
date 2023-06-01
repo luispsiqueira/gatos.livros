@@ -25,6 +25,8 @@ struct ContentView: View {
                     Image(systemName: "bag.fill")
                     Text("Book Store")
                 }
+            
+            
             Discover_SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")

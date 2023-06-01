@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchTendenciesView: View {
-    @State var searches = ["harry potter","hamlet", "sherlock holmes", "agatha christie", "a sutil arte de ligar o f*da-se", "dom casmurro", "iracema", "freud", "rita lee", "cabou minhas ideias"]
+    @State var searches = ["harry potter","hamlet", "sherlock holmes", "agatha christie", "os meninos da rua Paulo", "dom casmurro", "iracema", "freud", "rita lee", "cabeça fria, coração quente"]
     
     var body: some View {
         VStack{
