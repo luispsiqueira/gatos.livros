@@ -10,10 +10,15 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView{
+            StoreView()
+                .tabItem {
+                    Image(systemName: "bag.fill")
+                    Text("Book Store")
+                }
             ReadingNowView()
                 .tabItem {
-                    Image(systemName: "book.fill")
-                    Text("Reading Now")
+                    Image(systemName:  "book.fill")
+                    Text("Readind Now")
                 }
             BibliotecaView(mockBooks)
                 .tabItem {
