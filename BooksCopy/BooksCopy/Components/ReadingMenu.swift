@@ -24,8 +24,10 @@ struct ReadingMenu: View {
                     HStack{
                         Text("Contents - 0%")
                             .font(.body)
+                            .foregroundColor(LetterColor)
                             .padding(.trailing,70)
                         Image(systemName: "list.bullet").bold()
+                            .foregroundColor(LetterColor)
                     }
                 }
                 
@@ -36,8 +38,10 @@ struct ReadingMenu: View {
                     HStack{
                         Text("Search Book")
                             .font(.body)
+                            .foregroundColor(LetterColor)
                             .padding(.trailing,85)
                         Image(systemName: "magnifyingglass").bold()
+                            .foregroundColor(LetterColor)
                     }
                 }
                 
@@ -48,8 +52,10 @@ struct ReadingMenu: View {
                     HStack{
                         Text("Themes & Settings")
                             .font(.body)
+                            .foregroundColor(LetterColor)
                             .padding(.trailing,10)
                         Image(systemName: "textformat.size").bold().offset(x:10)
+                            .foregroundColor(LetterColor)
                         
                     }
                 }
@@ -64,61 +70,75 @@ struct ReadingMenu: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 15).frame(width:80,height: 45).foregroundColor(ButtonColor)
                         Image(systemName: "square.and.arrow.up").bold()
+                            .foregroundColor(LetterColor)
                     }
                 }
                 Button(action: {}){
                     ZStack{
                         RoundedRectangle(cornerRadius: 15).frame(width:80,height: 45).foregroundColor(ButtonColor)
                         Image(systemName: "lock.rotation").bold()
+                            .foregroundColor(LetterColor)
                     }
                 }
                 Button(action: {}){
                     ZStack{
                         RoundedRectangle(cornerRadius: 15).frame(width:80,height: 45).foregroundColor(ButtonColor)
                         Image(systemName: "bookmark").bold()
+                            .foregroundColor(LetterColor)
                     }
                 }}
                 
             
-                //        Menu {
-                //            Button(action: {}){
-                //                Label("Share", systemImage:  "square.and.arrow.up")
-                //
-                //            }
-                //            Button(action: {}){
-                //                Label("Lock Rotation", systemImage:  "lock.rotation")
-                //            }
-                //            Button(action: {}){
-                //                Label("Bookmark", systemImage:  "bookmark")
-                //            }
-                //            Button(action: {}){
-                //                Label("Temas e Ajustes", systemImage:  "textformat.size")
-                //            }
-                //            Button(action: {}) {
-                //                Label( "Buscar no Livro", systemImage: "magnifyingglass")}
-                //            Button(action: {}) {
-                //                Label("Conteúdo - 0%", systemImage: "list.bullet")
-                //            }
-                //            Divider()
-                //
-                //        } label: {
-                //            ZStack{
-                //                RoundedRectangle(cornerRadius: 8)
-                //                    .frame(width: 30,height: 30)
-                //                    .foregroundColor(.gray)
-                //                Image(systemName: "list.bullet")
-                //            }
-                //
-                //        }
+//                        Menu {
+//                            Button(action: {}){
+//                                Label("Share", systemImage:  "square.and.arrow.up")
+//
+//                            }
+//                            Button(action: {}){
+//                                Label("Lock Rotation", systemImage:  "lock.rotation")
+//                            }
+//                            Button(action: {}){
+//                                Label("Bookmark", systemImage:  "bookmark")
+//                            }
+//                            Button(action: {}){
+//                                Label("Temas e Ajustes", systemImage:  "textformat.size")
+//                            }
+//                            Button(action: {}) {
+//                                Label( "Buscar no Livro", systemImage: "magnifyingglass")}
+//                            Button(action: {}) {
+//                                Label("Conteúdo - 0%", systemImage: "list.bullet")
+//                            }
+//                            Divider()
+//
+//                        } label: {
+//                            ZStack{
+//                                RoundedRectangle(cornerRadius: 8)
+//                                    .frame(width: 30,height: 30)
+//                                    .foregroundColor(.gray)
+//                                Image(systemName: "list.bullet")
+//                            }
+//
+//                        }
             }
             
         }
     private var ButtonColor: Color{
             switch mode{
             case true:
-                return Color(red: 0.227, green: 0.227, blue: 0.236)
+                return /*@START_MENU_TOKEN@*/Color(red: 0.264, green: 0.255, blue: 0.216)/*@END_MENU_TOKEN@*/
             case false:
-                return /*@START_MENU_TOKEN@*/Color(red: 0.271, green: 0.271, blue: 0.271)/*@END_MENU_TOKEN@*/
+                return /*@START_MENU_TOKEN@*/Color(red: 0.884, green: 0.874, blue: 0.853)/*@END_MENU_TOKEN@*/
+            @unknown default:
+                return /*@START_MENU_TOKEN@*/Color(red: 0.579, green: 0.152, blue: 0.152)/*@END_MENU_TOKEN@*/
+            }
+            
+        }
+    private var LetterColor: Color{
+            switch mode{
+            case true:
+                return Color(.white)
+            case false:
+                return Color(.black)
             @unknown default:
                 return /*@START_MENU_TOKEN@*/Color(red: 0.579, green: 0.152, blue: 0.152)/*@END_MENU_TOKEN@*/
             }
