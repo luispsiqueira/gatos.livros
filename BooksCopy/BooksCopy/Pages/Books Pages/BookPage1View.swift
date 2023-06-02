@@ -26,7 +26,7 @@ struct BookPage1View: View {
                 //Title: Mudar o tamanho
                 Text("Act 1, Scene 1")
                     .foregroundColor(titleColor)
-                    .font(.system(size: CGFloat(x)*2 + 8))
+                    .font(.system(size: CGFloat(x)*2 + 6))
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .center)
                     //.preferredColorScheme(.dark)
@@ -65,20 +65,17 @@ struct BookPage1View: View {
             VStack{
                 if isTapped{
                     Text("Hamlet")
-                        .font(.system(size: CGFloat(x)*2))
                         .foregroundColor(.secondary)
                     
                     Spacer()
                     
                     Text("1")
-                        .font(.system(size: CGFloat(x)*2))
                         .foregroundColor(.secondary).offset(y: -30)
                 } else{
                     HStack{
                         ZStack{
                             Text("310 Páginas restantes no capítulo")
                                 .foregroundColor(.secondary)
-                                .font(.system(size: CGFloat(x)*2))
                             HStack{
                                 Spacer()
                                 Button(){
